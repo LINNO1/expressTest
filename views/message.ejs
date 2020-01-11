@@ -1,0 +1,11 @@
+<%if(locals.message){%>
+    <% message.forEach(msg=>{%>
+        <p class="<%=msg.type%>"><%=msg.string%></p>
+    <%})%>
+    <% removeMessage()%>
+<%}%>
+   
+<!--用来显示错误的模板，
+  主要是查看locals.message=[{type: ,string: },{},...]-->
+<!-- 向res.locals.messages中添加消息是一种简单的跟用户沟通的方式，但因为res.locals
+在重定向后会丢失，所以如果你要跨越请求传递消息的话，需要使用会话 -->

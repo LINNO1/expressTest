@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<!-- 路径注意，是相对于public这个文件夹的 -->
+</head>
+<body>
+	<h1>Photos</h1>
+	<p>	Express stock photo application.</p>
+	<ul id="photos_view">
+		<% photos.forEach((function(photo){%>
+			<li class="photo">	
+				<h2><%=photo.name%>	</h2>
+				<a href="/photos/<%=photo.id%>/download">
+				<img src="/photos/<%=photo.path%>"/>
+				</a>
+			</li>		
+         <%}))%>
+	</ul>
+	
+</body>
+</html>
